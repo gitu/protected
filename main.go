@@ -88,7 +88,7 @@ func withAuthentication(next http.HandlerFunc) http.HandlerFunc {
 			}
 		} else {
 			cookie, e := r.Cookie(cookieName)
-			if e != nil {
+			if e != nil && cookie != nil {
 				ck := cookie.Value
 				if checkKey(ck) {
 					granted = true
