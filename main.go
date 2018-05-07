@@ -109,6 +109,7 @@ func addKeyCookie(w http.ResponseWriter, k string) {
 		Value:    k,
 		MaxAge:   7 * 24 * 3600,
 		HttpOnly: true,
+		Path:     "/"
 	}
 	http.SetCookie(w, &c)
 }
